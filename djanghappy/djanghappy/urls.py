@@ -17,11 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from birthday.views import display, show_cake, wechat2023
-from mainapp.views import mainpage
+from mainapp.views import mainpage, lunbo
 
 urlpatterns = [
     path('', mainpage, name='mainpage'),
     path('cake/', show_cake, name='cakepage'),
     path('happy/', display, name='happybirthdaypage'),
     path('wechat2023/', wechat2023, name='wechat2023page'),
+    path('lunbomeishaonv/', lunbo, name='lunbopage'),
 ]
