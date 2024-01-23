@@ -1,0 +1,9 @@
+#music-player {
+    width: 600px; /* 宽为600px */
+    height: 300px; /* 长为300px */
+    background: #FFA500; /* 背景设为橙色 */
+    border-radius: 25px; /* 设置圆角 */
+}
+#music-player h1 {
+    color: #ADD8E6 /* 设置颜色为蓝色 */
+}
