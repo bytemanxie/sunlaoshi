@@ -184,19 +184,40 @@
       return timeS
     }
 
-    function initTasks() {
-      tasks = []
-      // 1 下班 18:00 - 9:00
-      tasks.push({
-        time: [dayjs().startOf('day').add(18, 'hour').valueOf(), dayjs().startOf('day').add(1, 'day').add(9, 'hour').valueOf()],
-        text: '下班'
-      })
-      // 1 双休日 周五 18:00 - 周日00:00:00
-      tasks.push({
-        time: [dayjs().startOf('week').add(5, 'day').add(18, 'hour').valueOf(), dayjs().endOf('week').add(1, 'day').add(9, 'hour').valueOf()],
-        text: '周末'
-      })
+    function isTodayHoliday() {
+      const today = dayjs().startOf('day').valueOf();
+      return window.holiday.some(holiday => holiday.time === today);
     }
+    
+    function initTasks() {
+      tasks = [];
+    
+      // 如果今天是节假日，则不添加下班任务
+      if (isTodayHoliday()) {
+        console.log("今天是节假日，不添加下班任务。");
+        return;
+      }
+    
+      const now = dayjs();
+      const dayOfWeek = now.day(); // dayjs 的 .day() 方法返回星期几，0 表示周日，6 表示周六
+    
+      // 只有在非周末的工作日添加下班任务
+      if (dayOfWeek > 0 && dayOfWeek < 5) {
+        // 下班 18:00 - 第二天 9:00
+        tasks.push({
+          time: [dayjs().startOf('day').add(18, 'hour').valueOf(), dayjs().startOf('day').add(1, 'day').add(9, 'hour').valueOf()],
+          text: '下班'
+        });
+      }
+    
+      // 双休日 周五 18:00 - 周日 9:00
+      tasks.push({
+        time: [now.startOf('week').add(5, 'day').add(18, 'hour').valueOf(), now.endOf('week').add(1, 'day').add(9, 'hour').valueOf()],
+        text: '周末'
+      });
+    }
+    
+  
 
     function startTaskTimer() {
       clearInterval(window.taskTimer);
