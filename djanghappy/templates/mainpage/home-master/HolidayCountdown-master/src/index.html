@@ -185,9 +185,18 @@
     }
 
     function isTodayHoliday() {
-      const today = dayjs().startOf('day').valueOf();
-      return window.holiday.some(holiday => holiday.time === today);
+      const today = dayjs().startOf('day');
+      const year = today.year();
+      const month = today.month() + 1; // dayjs 月份从 0 开始
+      const day = today.date();
+    
+      return window.holiday.some(holiday => 
+        holiday.year === year && 
+        holiday.month === month && 
+        holiday.day === day
+      );
     }
+    
     
     function initTasks() {
       tasks = [];
