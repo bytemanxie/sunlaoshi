@@ -211,13 +211,13 @@
       const dayOfWeek = now.day(); // dayjs 的 .day() 方法返回星期几，0 表示周日，6 表示周六
     
       // 只有在非周末的工作日添加下班任务
-      if (dayOfWeek > 0 && dayOfWeek < 5) {
+      //if (dayOfWeek > 0 && dayOfWeek < 5) {
         // 下班 18:00 - 第二天 9:00
         tasks.push({
           time: [dayjs().startOf('day').add(18, 'hour').valueOf(), dayjs().startOf('day').add(1, 'day').add(9, 'hour').valueOf()],
           text: '下班'
         });
-      }
+      //}
     
       // 双休日 周五 18:00 - 周日 9:00
       tasks.push({
