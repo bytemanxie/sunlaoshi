@@ -9,3 +9,6 @@ def lunbo(request):
 
 def holiday(request):
     return render(request, 'mainpage/home-master/HolidayCountdown-master/src/index.html')
+
+def xiaoyi(request):
+    return render(request, 'mainpage/home-master/xiaoyi/index.html')

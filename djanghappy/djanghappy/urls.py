@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from birthday.views import display, show_cake, wechat2023
-from mainapp.views import mainpage, lunbo, holiday
+from mainapp.views import mainpage, lunbo, holiday, xiaoyi
 
 urlpatterns = [
     path('', mainpage, name='mainpage'),
@@ -26,4 +26,5 @@ urlpatterns = [
     path('wechat2023/', wechat2023, name='wechat2023page'),
     path('lunbomeishaonv/', lunbo, name='lunbopage'),
     path('holiday/', holiday, name='holidaypage'),
+    path('xiaoyi/', xiaoyi, name='xiaoyipage'),
 ]
