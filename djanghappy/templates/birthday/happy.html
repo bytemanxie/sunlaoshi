@@ -102,7 +102,7 @@
 
 <body>
 <div class="cs">
-    <img src="{% static 'images/beauty.png' %}" id="logo">
+    <img src="../../static/images/beauty.png" id="logo">
 </div>
 <canvas class="canvas" width="1820" height="905"></canvas>
 <p class="text" style="color: #ed3073;">
@@ -624,18 +624,18 @@
 </script>
 <!--//音乐可改-->
 
-<style>
-    audio {
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-</style>
+{#<style>#}
+{#    audio {#}
+{#        position: absolute;#}
+{#        top: 0;#}
+{#        left: 0;#}
+{#    }#}
+{#</style>#}
 
-<audio controls>
-    <!-- src为音乐的路径 -->
-    <source src="{% static 'videos/1030.mp3' %}" type="audio/mpeg">
-</audio>
+{#<audio controls>#}
+{#    <!-- src为音乐的路径 -->#}
+{#    <source src="{% static 'videos/1030.mp3' %}" type="audio/mpeg">#}
+{#</audio>#}
 
 <a href="https://beian.miit.gov.cn/" target="_blank" class="btn btn-outline-secondary p-2 rounded text-dark bg-light">
     苏ICP备2024057854号-1
