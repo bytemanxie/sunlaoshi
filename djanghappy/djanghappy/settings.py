@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-q*)bqu0b*#qu2cy(ybsmct514zizie6=k0x!v^rhz963n-!#pk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.shouldsmile.love', 'localhost', '127.0.0.1', '[::1]', '111.230.197.203']
+ALLOWED_HOSTS = ['www.shouldsmile.love', 'localhost', '127.0.0.1', '[::1]', '111.230.197.203', 'shouldsmile.love']
 
 # Application definition
 
